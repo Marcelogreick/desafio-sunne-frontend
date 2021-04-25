@@ -1,0 +1,33 @@
+.container {
+  height: 100vh;
+
+  display: flex;
+  align-items: stretch;
+
+  img {
+    height: 80px;
+    width: 170px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-content: center;
+
+  width: 100%;
+  max-width: 700px;
+
+  form {
+    margin: 3.5rem 0;
+    width: 340px;
+    text-align: center;
+  }
+}
+
+.background {
+  flex: 1;
+  background: url('../../public/assets/login.jpg') no-repeat center;
+  background-size: cover;
+}

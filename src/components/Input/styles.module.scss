@@ -1,0 +1,54 @@
+.container {
+  background: #232129;
+  border-radius: 10px;
+  border: 2px solid #232129;
+  padding: 16px;
+  width: 100%;
+  color: #666360;
+
+  display: flex;
+  align-items: center;
+
+  & + div {
+    margin-top: 0.8rem;
+  }
+
+  input {
+    flex: 1;
+    background: transparent;
+    border: 0 none;
+    color: #F4EDE8;
+
+    &::placeholder {
+      color: #666360;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0;
+      outline: 0
+    }
+  }
+
+  i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.containerFocus {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.containerFilled {
+  color: var(--primary);
+}
