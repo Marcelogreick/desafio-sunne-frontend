@@ -1,7 +1,11 @@
 import styles from './styles.module.scss';
 import { RiDashboardLine, RiUserAddLine } from 'react-icons/ri'
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { useState } from 'react';
 
 export default function SideBar() {
+  const [ isDrawerSideBar , setIsDrawerSideBar ] = useState(true)
+
   return(
     <aside className={styles.container}>
       <div className={styles.user}>

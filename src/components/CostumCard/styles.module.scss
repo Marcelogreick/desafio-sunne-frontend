@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+  align-items: center;
+  height: 6.5rem;
+  width: 10.5rem;
+  border: 1px solid #fff;
+  border-radius: 20px;
+
+  h1 {
+    font-size: 1.4rem;
+    color: rgb(90, 87, 87);
+  }
+
+  p {
+    font-size: 1rem;
+    color: rgb(90, 87, 87);
+  }
+}

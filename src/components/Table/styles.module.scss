@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  height: 15rem;
+  border: 1px solid rgba(54, 162, 235, 1);
+  border-radius: 10px;
+
+  ul {
+    margin-top: 0.5rem;
+  }
+
+  ul li {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: var(--text);
+
+    & + li {
+      margin-top: 0.5rem;
+    }
+
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      svg {
+        cursor: pointer;
+
+        & + svg {
+          margin-left: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.headerTable {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-bottom: 1px solid rgba(54, 162, 235, 1);
+
+  p {
+    font-size: 1rem;
+    color: var(--text);
+  }
+}

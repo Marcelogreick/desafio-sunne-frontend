@@ -3,4 +3,40 @@
   height: 100vh;
   width: 100%;
   max-width: 1480px;
+
+  @media(max-width: 486px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  @media(max-width: 1040px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.informationsContainer {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 2rem;
+  margin-top: 5.5rem;
+
+  @media(max-width: 1040px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
