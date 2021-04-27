@@ -1,0 +1,29 @@
+.container {
+  background: #fff;
+  border-radius: 10px;
+  border: 2px solid #232129;
+  padding: 16px;
+  width: 100%;
+  color: #666360;
+
+  display: flex;
+  align-items: center;
+
+  option {
+    background: #fff;
+    color: #666360;
+
+    &::placeholder {
+      color: #666360;
+    }
+  }
+}
+
+.containerFocus {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.containerFilled {
+  color: var(--primary);
+}
