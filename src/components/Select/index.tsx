@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement>  {
   option1?: string,
   option2?: string,
-  option3?: string
+  option3?: string,
 }
 
 export default function Select({option1, option2, option3}: SelectProps) {
@@ -19,7 +19,7 @@ export default function Select({option1, option2, option3}: SelectProps) {
     onFocus={() => setIsFocused(true)}
     onBlur={handleInputBlur}
     name="select"
-    value={1}
+    defaultValue={"valor1"}
     className={`
       ${styles.container}
       ${isFocused ? styles.containerFocus : ''}`

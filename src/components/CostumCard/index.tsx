@@ -6,7 +6,7 @@ interface CardProps {
   color: string;
 }
 
-export default function CostumCard({title, value, color}) {
+export default function CostumCard({title, value, color}: CardProps) {
   return(
     <div className={styles.container} style={{backgroundColor: color}}>
       <h1>{title}</h1>

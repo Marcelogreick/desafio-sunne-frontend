@@ -1,7 +1,7 @@
-import CostumCard from "../../components/CostumCard";
-import SideBar from "../../components/SideBar";
-import Graphic from "../../components/Graphic";
-import Table from "../../components/Table";
+import CostumCard from '../../components/CostumCard';
+import SideBar from '../../components/SideBar';
+import Graphic from '../../components/Graphic';
+import Table from '../../components/Table';
 
 import styles from './styles.module.scss';
 

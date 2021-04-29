@@ -10,9 +10,16 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   showPassword?: React.MouseEventHandler<HTMLButtonElement>;
   styleColor?: string;
   textColor?: string;
+  value: string
 }
 
-const Input: React.FC<InputProps> = ({ iconEye: IconEye, icon: Icon, styleColor, textColor, showPassword, ...rest }) => {
+const Input: React.FC<InputProps> = (
+  {
+    iconEye: IconEye,
+    icon: Icon, styleColor,
+    textColor, showPassword,
+    ...rest
+  }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const [isFocused, setIsFocused] = useState(false);
@@ -26,26 +33,26 @@ const Input: React.FC<InputProps> = ({ iconEye: IconEye, icon: Icon, styleColor,
 
   return(
     <div
-    className={
-      `${styles.container}
-       ${isFocused ? styles.containerFocus : ''}
-       ${isFilled ? styles.containerFilled : ''}`
-    }
-    style={{backgroundColor: styleColor}}
+      className={
+        `${styles.container}
+        ${isFocused ? styles.containerFocus : ''}
+        ${isFilled ? styles.containerFilled : ''}`
+      }
+      style={{backgroundColor: styleColor}}
     >
       { Icon && <Icon size={20} /> }
       <input
-      onFocus={() => setIsFocused(true)}
-      onBlur={handleInputBlur}
-      ref={inputRef}
-      {...rest}
-      style={{color: textColor}}
+        onFocus={() => setIsFocused(true)}
+        onBlur={handleInputBlur}
+        ref={inputRef}
+        {...rest}
+        style={{color: textColor}}
       />
       <i onClick={showPassword}>
         { IconEye && <IconEye size={19} /> }
       </i>
     </div>
-    );
+  );
 }
 
 export default Input;
