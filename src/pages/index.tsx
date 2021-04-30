@@ -4,7 +4,8 @@ import Button from '../components/Button';
 import { useState } from 'react';
 import api from '../services/api';
 import { useRouter } from 'next/dist/client/router';
-import { useCookies } from "react-cookie"
+import { useCookies } from "react-cookie";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 import styles from '../styles/Login.module.scss';
 
@@ -32,7 +33,10 @@ export default function Login() {
 
       router.push('/SelectUser');
     } catch (err) {
-      console.log('error')
+      Swal.fire({
+        icon: 'error',
+        text: 'Senha ou usuário inválido',
+      })
     }
   }
 
