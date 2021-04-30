@@ -4,8 +4,7 @@ import Button from '../components/Button';
 import { useState } from 'react';
 import api from '../services/api';
 import { useRouter } from 'next/dist/client/router';
-import cookie from 'js-cookie';
-
+import { useCookies } from "react-cookie"
 
 import styles from '../styles/Login.module.scss';
 
@@ -15,18 +14,23 @@ export default function Login() {
   const [revealPassword, setRevealPassword] = useState(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [cookie, setCookie] = useCookies(["user"])
 
-  async function handleLogin(e) {
-    e.preventDefault();
-
+    async function handleLogin(event) {
+      event.preventDefault();
     try {
-      const response = await api.post("login", {email, password});
-
+      const response = await api.post("login",{email, password});
       console.log(response);
 
-      cookie.set('email', email, { expires: 1, path: '/' });
+      const data = response.data;
 
-      router.push('/User');
+      setCookie("user", JSON.stringify(data), {
+        path: "/",
+        maxAge: 3600, // Expires after 1hr
+        sameSite: true,
+      })
+
+      router.push('/SelectUser');
     } catch (err) {
       console.log('error')
     }
@@ -42,7 +46,7 @@ export default function Login() {
       <div className={styles.content}>
         <img src="assets/logo.png" alt="logo-login"/>
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} method="POST">
           <Input
             name="password"
             icon={FiMail}

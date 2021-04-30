@@ -10,7 +10,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   showPassword?: React.MouseEventHandler<HTMLButtonElement>;
   styleColor?: string;
   textColor?: string;
-  value: string
+  value?: string
 }
 
 const Input: React.FC<InputProps> = (

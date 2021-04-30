@@ -1,10 +1,12 @@
 import { AppProps } from 'next/app';
-import { Provider as NextAuthProvider} from 'next-auth/client';
+import { CookiesProvider } from "react-cookie"
 import '../styles/global.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
+    <CookiesProvider>
       <Component {...pageProps} />
+    </CookiesProvider>
   );
 }
 

@@ -5,6 +5,7 @@ import Checked from '../../components/Checked';
 
 
 import styles from "./styles.module.scss";
+import { parseCookies } from '../../helpers';
 
 export default function Register() {
   return(
@@ -13,7 +14,7 @@ export default function Register() {
 
       <div className={styles.content}>
         <h1>Cadastro</h1>
-        <form>
+        <form method='POST'>
           <div>
             <Input
               name="create"
@@ -84,4 +85,21 @@ export default function Register() {
       </div>
     </div>
   );
+}
+
+
+
+Register.getInitialProps = async ({ req, res }) => {
+  const data = parseCookies(req)
+
+if (res) {
+    if (Object.keys(data).length === 0 && data.constructor === Object) {
+      res.writeHead(301, { Location: "/" })
+      res.end()
+    }
+  }
+
+  return {
+    data: data && data,
+  }
 }

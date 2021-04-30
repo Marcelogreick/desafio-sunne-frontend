@@ -1,10 +1,11 @@
 import { useRouter } from 'next/dist/client/router';
 import Button from '../../components/Button';
 import Select from '../../components/Select';
+import { parseCookies } from '../../helpers';
 
 import styles from './styles.module.scss';
 
-export default function User() {
+export default function SelectUser() {
   const router = useRouter();
   return(
     <div className={styles.container}>
@@ -15,4 +16,19 @@ export default function User() {
       </section>
     </div>
   );
+}
+
+SelectUser.getInitialProps = async ({ req, res }) => {
+  const data = parseCookies(req)
+
+  if (res) {
+    if (Object.keys(data).length === 0 && data.constructor === Object) {
+      res.writeHead(301, { Location: "/" })
+      res.end()
+    }
+  }
+
+  return {
+    data: data && data,
+  }
 }

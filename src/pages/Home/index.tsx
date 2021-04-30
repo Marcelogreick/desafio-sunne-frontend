@@ -2,6 +2,7 @@ import CostumCard from '../../components/CostumCard';
 import SideBar from '../../components/SideBar';
 import Graphic from '../../components/Graphic';
 import Table from '../../components/Table';
+import { parseCookies } from "../../helpers/index";
 
 import styles from './styles.module.scss';
 
@@ -24,4 +25,19 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+Home.getInitialProps = async ({ req, res }) => {
+  const data = parseCookies(req)
+
+if (res) {
+    if (Object.keys(data).length === 0 && data.constructor === Object) {
+      res.writeHead(301, { Location: "/" })
+      res.end()
+    }
+  }
+
+  return {
+    data: data && data,
+  }
 }
