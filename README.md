@@ -31,6 +31,9 @@ Em caso de download do projeto você precisará baixar as dependências:
 2 - Dentro desta aplicação frontend execurte yarn dev
 ```
 
+## Usuário: marcelo@gmail.com
+## Senha: 123456
+
 ## Estrutura Next.Js
 
 <p>1 - Escolhi o Next.Js para fazer o teste é uma ferramenta nova que aprendi e estou gostando bastante juntamente com Typescript</p>
@@ -80,6 +83,9 @@ bem simples igual o exemplo da documnetação alterei apenas o estilo.
 checkbox e dois botões
 </p>
 <br/>
+
+## Usuário: marcelo@gmail.com
+## Senha: 123456
 
 
 
